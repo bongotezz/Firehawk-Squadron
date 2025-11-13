@@ -7,7 +7,7 @@ class Enemy(pygame.sprite.Sprite):
     def __init__(self, screenWidth, screenHeight, startX, startY, shipType, attackPattern, audioLevel): 
         '''
         shipType: one, two, rockDropper, miniBoss
-        attackPattern: dive, position of the rockDropper, strafe
+        attackPattern: miniBoss, strafe
         '''
         pygame.sprite.Sprite.__init__(self)
         self.screenWidth = screenWidth
