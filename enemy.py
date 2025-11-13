@@ -5,7 +5,7 @@ from random import randint
 
 class Enemy(pygame.sprite.Sprite):
     def __init__(self, screenWidth, screenHeight, startX, startY, shipType, attackPattern, audioLevel): 
-        # shipType = one, owo, rockDropper, miniBoss
+        # shipType = one, two, rockDropper, miniBoss
         # attackPattern = dive, position of the rockDropper, strafe
         pygame.sprite.Sprite.__init__(self)
         self.screenWidth = screenWidth
@@ -49,6 +49,8 @@ class Enemy(pygame.sprite.Sprite):
             self.image = pygame.image.load('Assets/Images/Enemies/MiniBoss.png').convert_alpha()
             self.hitpoints = 20
             self.score = 100
+        else:
+            raise pygame.error("Unsupported shipType")
         self.rect = self.image.get_rect()
         self.rect.centerx = self.startx
         self.rect.centery = self.starty
